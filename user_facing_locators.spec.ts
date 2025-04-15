@@ -13,34 +13,37 @@ test.beforeEach( async ({page}) => {
 
 //HT: getByRole, getByText, getByLabel, getByTitle, getByAltText, getByPlaceholder.
 
-test('getByRole',async({page}) => {
+test('getByRole',async({page}) => { //Search by role (Elements > Accessibility tab)
     await page.getByRole('link', {name:'Video Tutorial'}).click();
 
     await page.getByText("HTML Video Tutorial").isVisible();
    
 })
 
-test('getByText',async({page}) => {
+test('getByText',async({page}) => { //Search by any text
     await page.getByText('/ Sign Up').first().isVisible()
 })
 
-test('getByLabel',async({page}) => {
-    await page.getByLabel('Sign Up to Improve Your Learning Experience').first().click();
-  //  await expect(page.getByPlaceholder('email')).toBeVisible();
-    await expect(page.getByRole('textbox',{name:'email'})).toBeVisible();
+test('getByLabel',async({page}) => { //Search by Label text
+    await page.getByLabel('Home link').click();
+    await page.reload();
+    console.log('Page reloaded')
 })
 
-test('getByTitle',async({page})=>{
+test('getByTitle',async({page})=>{ //Search by 
+    let a='W3Schools offers'
     await page.getByTitle('Our Services').click();
-    await expect(page.getByText('Free Tutorials')).toBeVisible();
+    await expect(page.getByText(a)).toBeVisible();
+    console.log(a+' text is visible')
 })
 
-test('getByAltText',async({page})=>{
-    //???
-
+test('getByAltText',async({page})=>{ //Search by image
+    await page.getByAltText('Dynamic Spaces').first().isVisible();
+    
 })
 
 test('getByPlaceholder',async({page}) =>{
-    await page.getByTitle('Our Services').click();
-    await expect (page.getByPlaceholder('Filter...')).toBeVisible();
+//    await page.getByTitle('Our Services').click();
+    await (page.getByPlaceholder('Search...')).first().fill('Hello everybody');
+    await expect (page.getByText('Hello everybody')).toBeVisible();
 })
