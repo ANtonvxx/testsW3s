@@ -1,17 +1,20 @@
+// HT:
+// Playwright user-facing locators
+// Presentation
+// Code from lesson - link
+// Official documentation - link
+// YT tutorial - link 
+// ______________________________________________________
+// Home tasks:
+// Try to find different elements on https://www.w3schools.com using all methods for user-facing locators - getByRole, getByText, getByLabel, getByTitle, getByAltText, getByPlaceholder. Create separate test for each method (as in my example), but do not use the same elements from my example
+// Create new branch, push your code to repo and create Pull request
+
+
 import { test, expect } from '@playwright/test';
 
 test.beforeEach( async ({page}) => {
     await page.goto('https://www.w3schools.com/');
 });
-
-// test('getByText', async ({page}) => {
-//     await page.getByText(`Not Sure Where To Begin?`).click();
-
-//     await expect(page.getByText(`To become a web developer`)).toBeVisible();
-// });
-
-
-//HT: getByRole, getByText, getByLabel, getByTitle, getByAltText, getByPlaceholder.
 
 test('getByRole',async({page}) => { //Search by role (Elements > Accessibility tab)
     await page.getByRole('link', {name:'Video Tutorial'}).click();
