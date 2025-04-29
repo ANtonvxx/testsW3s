@@ -10,6 +10,6 @@ test.beforeEach(async ({page}) => {
 })
 
 test('useFilterMethod',async({page}) => { //click Arrow using filter() method
-    await page.locator('div.blog-slide').filter({hasText: 'Revolutionising Banking'}).locator('img[alt="arrow"]').click();
- //   expect (page.locator('div.articlePerson_bio').filter({hasText: 'Director of FinTech at TechMagic'})).toBeVisible();
+    await page.locator(`.blog-slide`).filter({hasText: 'Revolutionising Banking'}).getByAltText('arrow').click();
+    //await page.locator('div.blog-slide').filter({hasText: 'Revolutionising Banking'}).locator('img[alt="arrow"]').click();
 })
