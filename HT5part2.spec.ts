@@ -41,7 +41,7 @@ test ("checkingInput", async ({page}) =>{
     //Assertion that text was entered (enter value to the Input and check that it was correctly entered)
     await page.locator ('#target').fill('Some test text');
     await expect (page.locator('#target')).toHaveValue('Some test text');
-//    await page.getByRole('heading', { name: 'Playground' }).locator ('#target').fill('Some test text'); - why doesn't this work? (with getByRole)    
+//    await page.getByRole('heading', { name: 'Playground' }).locator ('#target').fill('Some test text'); //- why doesn't this work? (with getByRole)    
 
     await page.waitForTimeout (1000);
 })
