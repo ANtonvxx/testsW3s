@@ -12,12 +12,25 @@ test ("fileUpload", async ({page}) =>{
     
     // Start waiting for file chooser before clicking. Note no await.
     const fileChooserPromise = page.waitForEvent('filechooser');
-
+    
     await page.getByText('Upload image').click();
     
     const fileChooser = await fileChooserPromise;
     
-    await fileChooser.setFiles(path.join(__dirname, 'assets/6.png'));
+    //We're choosing local image from the /assets folder, created in our /testW3s folder for tests 
+
+    await fileChooser.setFiles(path.resolve(__dirname, 'assets/6.png'));
+    /* 
+    P.S. We can use path.resolve and path.join. The difference is:
+    | Метод          | Абсолютний шлях? | Поводження з абсолютними аргументами | Для чого краще                |
+    | -------------- | ---------------- | ------------------------------------ | ----------------------------- |
+    | `path.resolve` | Так              | Ігнорує попередні, якщо є абсолютний | Файлова система, Playwright   |
+    | `path.join`    | Ні (залежить)    | Просто зʼєднує                       | Логіка шляхів у межах проєкту |
+
+    JPT recommends to use `path.resolve` because it guarantees the absolute path is always created
+    */
+
+
 
     await expect(page.getByText('Meme editor')).toBeVisible();
 
