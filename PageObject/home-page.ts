@@ -1,7 +1,7 @@
 import { expect, type Page, type Locator } from '@playwright/test';
 
 export class headerMenu {
-    constructor (private page: Page){}
+    constructor (public page: Page){}
 
 
     //To make the below scheme work, we've executed the following 2 commands:
