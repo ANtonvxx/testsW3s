@@ -1,0 +1,29 @@
+{
+  "cookies": [
+    {
+      "name": "__cf_bm",
+      "value": "msTYrNN5zEpbOWWyaqg2kT_XGkXYWgI8HXuqW9Hi3RY-1748969993-1.0.1.1-gnBDAIUAVERkXCGtworb2mLRPANSz2A1TwROhQhc9wWKFgv9i7hWaAaub6.JuWQ0zUQRc5VlCAmSsWO9KGyX5u5uJrLvvpRQoOm4YecV5Cw",
+      "domain": ".snigelweb.com",
+      "path": "/",
+      "expires": 1748971793.84405,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.w3schools.com",
+      "localStorage": [
+        {
+          "name": "preferredpagemode",
+          "value": "null"
+        },
+        {
+          "name": "preferredmode",
+          "value": "null"
+        }
+      ]
+    }
+  ]
+}

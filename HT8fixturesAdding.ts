@@ -14,6 +14,7 @@ export const test = base.extend<LoginFixture>({
     await page.goto('https://www.w3schools.com/');
 
     const header = new HeaderComponent(page);
+
     await header.clickSignIn();
 
     const modal = new HeaderLoginModal(page);
@@ -25,6 +26,7 @@ export const test = base.extend<LoginFixture>({
     await page.waitForSelector('text=My learning');
 
     await use(new headerMenu (page));
+
   },
 });
 
